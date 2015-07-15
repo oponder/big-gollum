@@ -18,4 +18,5 @@
                 = image_tag("user-circle-overlay.png")
           - if current_user.has_role? "delete_wiki"
             = link_to 'Delete', wiki_path(wiki), method: "delete", data: {confirm: "Are you sure? There is no undo!"}, class: "delete_wiki", id: "delete_wiki-#{wiki.name}"
-          = link_to 'Edit', edit_wiki_path(wiki), class: "edit_wiki_button", id: "edit_wiki-#{wiki.name}"
+          - if current_user.has_role? "edit_wiki"
+            = link_to 'Edit', edit_wiki_path(wiki), class: "edit_wiki_button", id: "edit_wiki-#{wiki.name}"
