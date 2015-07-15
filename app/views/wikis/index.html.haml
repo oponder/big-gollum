@@ -1,9 +1,10 @@
 .row
-  .col-md-2
-    = link_to new_wiki_path, id: "new_wiki_link" do
-      #new_wiki_icon
-        %i.fa.fa-plus
-      = t('.new_wiki')
+  - if current_user.has_role? "create_wiki"
+    .col-md-2
+      = link_to new_wiki_path, id: "new_wiki_link" do
+        #new_wiki_icon
+          %i.fa.fa-plus
+        = t('.new_wiki')
   .col-md-10
     %ul#wikis
       - @wikis.all.each do |wiki|
