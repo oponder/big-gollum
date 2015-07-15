@@ -1,4 +1,17 @@
 class WikisController < ApplicationController
+  before_filter :create_wiki_required, only: %w(new create)
+
+  def create_wiki_required
+    unless current_user && current_user.has_role?("create_wiki")
+      access_denied
+    end
+  end
+
+  def access_denied
+    flash[:error] = "Sorry, you don't have access to that."
+    redirect_to root_url and return false
+  end
+
   def index
     @wikis = Wiki
   end
