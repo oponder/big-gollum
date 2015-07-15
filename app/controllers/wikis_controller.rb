@@ -1,8 +1,15 @@
 class WikisController < ApplicationController
   before_filter :create_wiki_required, only: %w(new create)
+  before_filter :delete_wiki_required, only: :destroy
 
   def create_wiki_required
     unless current_user && current_user.has_role?("create_wiki")
+      access_denied
+    end
+  end
+
+  def delete_wiki_required
+    unless current_user && current_user.has_role?("delete_wiki")
       access_denied
     end
   end
