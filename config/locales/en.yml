@@ -9,6 +9,7 @@ en:
       welcome: "Welcome"
       settings: "Settings"
       logout: "Logout"
+      users: "Users"
 
   devise:
     sessions:
@@ -28,6 +29,12 @@ en:
     show:
       title: "Settings"
       edit_settings: "Edit settings"
+
+  invite_users:
+    index:
+      invite_user: "Invite user"
+    new:
+      submit: "Invite user"
 
   wikis:
     form:

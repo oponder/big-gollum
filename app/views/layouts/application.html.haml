@@ -28,6 +28,8 @@
                 = link_to edit_user_registration_path do
                   = t('.welcome')
                   = current_user.email
+              %li
+                = link_to t('.users'), invite_users_path
 
               %li
                 = link_to t('.settings'), settings_path

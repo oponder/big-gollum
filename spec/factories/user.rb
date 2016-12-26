@@ -6,5 +6,9 @@ FactoryGirl.define do
     trait :admin do
       email "admin-user@example.com"
     end
+
+    trait :normal do
+      sequence(:email) { |n| "person#{n}@example.com" }
+    end
   end
 end
