@@ -28,10 +28,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # PUT /resource
   def update
     super
-    user = User::find_by_email(params[:user][:email])
-    user.first_name = params[:user][:first_name]
-    user.last_name = params[:user][:last_name]
-    user.save!
   end
 
   # DELETE /resource

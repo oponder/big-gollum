@@ -12,6 +12,14 @@ Given /^I am logged in as a user$/ do
   click_on "Log in"
 end
 
+Given /^a user account exists$/ do
+  user = User.create(:email => "jack@johnson.com",
+                     :first_name => "Jack",
+                     :last_name => "Johnson",
+                     :password => "12345678",
+                     :password_confirmation => "12345678")
+end
+
 Given(/^registrations are "([^"]*)"$/) do |state|
   value = (state == "enabled") ? "1" : "0"
   setting = Setting.find_or_initialize_by(:key => "allow_registrations")
@@ -30,6 +38,8 @@ end
 
 When(/^I register as "([^"]*)"$/) do |email|
   fill_in "user_email", :with => email
+  fill_in "user_first_name", :with => "First"
+  fill_in "user_last_name", :with => "Last"
   fill_in "user_password", :with => "12345678"
   fill_in "user_password_confirmation", :with => "12345678"
   click_on "Sign up"

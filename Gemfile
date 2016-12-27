@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.0'
+gem 'rails', '4.2.7.1'
 gem 'gollum'
 gem 'github-markdown'
 
@@ -17,6 +17,8 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'haml'
+
+gem 'gollum-rugged_adapter', '0.4.3'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

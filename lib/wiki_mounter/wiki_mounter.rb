@@ -1,4 +1,5 @@
 class WikiMounter
+  Gollum::GIT_ADAPTER = "rugged"
   require 'rubygems'
   require 'gollum/app'
 
